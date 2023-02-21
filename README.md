@@ -18,6 +18,9 @@ In this project, Pacman agent will find paths thoughout his maze world, both to 
 | `aStarSearch` | `Pending` | **Required**. Search the node that has the lowest combined cost and heuristic first. |
 
 ### B) ScreenShots
-#### -> DFS
+#### -> DFS - Medium Maze
 ![DFS Screenshot](Pacman/Screenshots/DFS.png)
+
+#### -> BFS - Medium Maze
+![BFS Screenshot](Pacman/Screenshots/BFS.png)
 
