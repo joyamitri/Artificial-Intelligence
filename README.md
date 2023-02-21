@@ -24,3 +24,16 @@ In this project, Pacman agent will find paths thoughout his maze world, both to 
 #### -> BFS - Medium Maze
 ![BFS Screenshot](Pacman/Screenshots/BFS.png)
 
+## Running Tests
+
+To run tests, see `commands.txt`.
+
+Example:
+
+To play a game of Pacman type the following command line: 
+
+```bash
+  python pacman.py 
+```
+
+
