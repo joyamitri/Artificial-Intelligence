@@ -17,3 +17,7 @@ In this project, Pacman agent will find paths thoughout his maze world, both to 
 | `nullHeuristic` | `Pending` | **Required**. A heuristic function estimates the cost from the current state to the nearest goal in the provided SearchProblem. |
 | `aStarSearch` | `Pending` | **Required**. Search the node that has the lowest combined cost and heuristic first. |
 
+### B) ScreenShots
+#### -> DFS
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
