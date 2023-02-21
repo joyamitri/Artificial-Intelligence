@@ -24,7 +24,7 @@ In this project, Pacman agent will find paths thoughout his maze world, both to 
 #### -> BFS - Medium Maze
 ![BFS Screenshot](Pacman/Screenshots/BFS.png)
 
-## Running Tests
+### C) Running Tests
 
 To run tests, see `commands.txt`.
 
@@ -36,4 +36,11 @@ To play a game of Pacman type the following command line:
   python pacman.py 
 ```
 
+To perform DFS on different maze size, type the following command line:
+
+```bash
+  python pacman.py -l tinyMaze -p SearchAgent
+  python pacman.py -l mediumMaze -p SearchAgent
+  python pacman.py -l bigMaze -z .5 -p SearchAgent
+```
 
