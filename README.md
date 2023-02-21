@@ -19,5 +19,5 @@ In this project, Pacman agent will find paths thoughout his maze world, both to 
 
 ### B) ScreenShots
 #### -> DFS
-![DFS Screenshot](Screenshots/DFS.png)
+![DFS Screenshot](Pacman/Screenshots/DFS.png)
 
