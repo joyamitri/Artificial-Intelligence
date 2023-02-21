@@ -36,7 +36,7 @@ To play a game of Pacman type the following command line:
   python pacman.py 
 ```
 
-To perform DFS on different maze size, type the following command line:
+To perform DFS on different maze size, type the following command lines:
 
 ```bash
   python pacman.py -l tinyMaze -p SearchAgent
