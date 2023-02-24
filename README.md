@@ -14,7 +14,6 @@ In this project, Pacman agent will find paths thoughout his maze world, both to 
 | `depthFirstSearch` | `Done` | **Required**. Search the deepest nodes in the search tree first. |
 | `breadthFirstSearch` | `Done` | **Required**. Search the shallowest nodes in the search tree first. |
 | `uniformCostSearch` | `Done` | **Required**. Search the node of least total cost first. |
-| `nullHeuristic` | `Pending` | **Required**. A heuristic function estimates the cost from the current state to the nearest goal in the provided SearchProblem. |
 | `aStarSearch` | `Pending` | **Required**. Search the node that has the lowest combined cost and heuristic first. |
 
 ### B) ScreenShots
