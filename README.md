@@ -48,3 +48,10 @@ Test Run for UCS - Medium Scary Maze
   python pacman.py -l mediumScaryMaze -p StayWestSearchAgent
 ```
 ![UCS - Medium Scary Maze Screenshot](Pacman/Screenshots/Medium%20Scary%20Maze%20-%20UCS.png)
+
+Test Run for A* - Big Maze
+
+```bash
+  python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic
+```
+![A* - Big Maze Screenshot](Pacman/Screenshots/Big%20Maze%20-%20Astar.png)
