@@ -55,3 +55,21 @@ Test Run for A* - Big Maze
   python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic
 ```
 ![A* - Big Maze Screenshot](Pacman/Screenshots/Big%20Maze%20-%20Astar.png)
+
+### C) Results of Search Algorithms 
+
+| Algortihms | Maze     | Cost     | Node     | Score     |
+| :-------- | :------- | :------- | :------- | :------- |
+| `DFS` | `Tiny` | `10` | `15` | `500` |
+| `DFS` | `Medium` | `130` | `146` | `380` |
+| `DFS` | `Big` | `210` | `390` | `300` |
+| `BFS` | `Tiny` | `8` | `15` | `502` |
+| `BFS` | `Medium` | `68` | `269` | `442` |
+| `BFS` | `Big` | `210` | `620` | `300` |
+| `UCS` | `Medium` | `68` | `269` | `442` |
+| `UCS` | `Medium Dotted` | `1` | `186` | `646` |
+| `UCS` | `Medium Scary` | `68719479864` | `108` | `418` |
+| `UCS` | `Big` | `210` | `620` | `300` |
+| `A*` | `Medium` | `68` | `221` | `442` |
+| `A*` | `Big` | `210` | `549` | `300` |
+
