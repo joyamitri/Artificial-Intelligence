@@ -41,3 +41,10 @@ Test Run for BFS - Medium Maze
   python pacman.py -l bigMaze -p SearchAgent -a fn=bfs -z .5
 ```
 ![BFS - Big Maze Screenshot](Pacman/Screenshots/Big%20Maze%20-%20BFS.png)
+
+Test Run for UCS - Medium Scary Maze
+
+```bash
+  python pacman.py -l mediumScaryMaze -p StayWestSearchAgent
+```
+![UCS - Medium Scary Maze Screenshot](Pacman/Screenshots/Medium%20Scary%20Maze%20-%20UCS.png)
