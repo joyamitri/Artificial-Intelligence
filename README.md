@@ -33,5 +33,5 @@ Test Run for DFS - Tiny Maze
 ```bash
   python pacman.py -l tinyMaze -p SearchAgent
 ```
-![DFS - Tiny Maze Screenshot](Pacman/Screenshots/Tiny Maze - DFS.png)
+![DFS - Tiny Maze Screenshot](Pacman/Screenshots/Tiny%20Maze%20-%20DFS.png)
 
