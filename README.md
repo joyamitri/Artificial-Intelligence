@@ -16,7 +16,7 @@ In this project, Pacman agent will find paths thoughout his maze world, both to 
 | `uniformCostSearch` | `Done` | **Required**. Search the node of least total cost first. |
 | `aStarSearch` | `Done` | **Required**. Search the node that has the lowest combined cost and heuristic first. |
 
-### B) Running Tests
+### B) Running Tests For Search Algorithms 
 
 To run tests, see `commands.txt`.
 
@@ -35,3 +35,9 @@ Test Run for DFS - Tiny Maze
 ```
 ![DFS - Tiny Maze Screenshot](Pacman/Screenshots/Tiny%20Maze%20-%20DFS.png)
 
+Test Run for BFS - Medium Maze
+
+```bash
+  python pacman.py -l bigMaze -p SearchAgent -a fn=bfs -z .5
+```
+![BFS - Big Maze Screenshot](Pacman/Screenshots/Big%20Maze%20-%20BFS.png)
