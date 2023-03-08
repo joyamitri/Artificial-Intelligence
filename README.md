@@ -16,14 +16,7 @@ In this project, Pacman agent will find paths thoughout his maze world, both to 
 | `uniformCostSearch` | `Done` | **Required**. Search the node of least total cost first. |
 | `aStarSearch` | `Done` | **Required**. Search the node that has the lowest combined cost and heuristic first. |
 
-### B) ScreenShots
-#### -> DFS - Medium Maze
-![DFS Screenshot](Pacman/Screenshots/DFS.png)
-
-#### -> BFS - Medium Maze
-![BFS Screenshot](Pacman/Screenshots/BFS.png)
-
-### C) Running Tests
+### B) Running Tests For Search Algorithms 
 
 To run tests, see `commands.txt`.
 
@@ -35,11 +28,48 @@ To play a game of Pacman type the following command line:
   python pacman.py 
 ```
 
-To perform DFS on different maze size, type the following command lines:
+Test Run for DFS - Tiny Maze
 
 ```bash
   python pacman.py -l tinyMaze -p SearchAgent
-  python pacman.py -l mediumMaze -p SearchAgent
-  python pacman.py -l bigMaze -z .5 -p SearchAgent
 ```
+![DFS - Tiny Maze Screenshot](Pacman/Screenshots/Tiny%20Maze%20-%20DFS.png)
+
+Test Run for BFS - Medium Maze
+
+```bash
+  python pacman.py -l bigMaze -p SearchAgent -a fn=bfs -z .5
+```
+![BFS - Big Maze Screenshot](Pacman/Screenshots/Big%20Maze%20-%20BFS.png)
+
+Test Run for UCS - Medium Scary Maze
+
+```bash
+  python pacman.py -l mediumScaryMaze -p StayWestSearchAgent
+```
+![UCS - Medium Scary Maze Screenshot](Pacman/Screenshots/Medium%20Scary%20Maze%20-%20UCS.png)
+
+Test Run for A* - Big Maze
+
+```bash
+  python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic
+```
+![A* - Big Maze Screenshot](Pacman/Screenshots/Big%20Maze%20-%20Astar.png)
+
+### C) Results of Search Algorithms 
+
+| Algortihms | Maze     | Cost     | Node     | Score     |
+| :-------- | :------- | :------- | :------- | :------- |
+| `DFS` | `Tiny` | `10` | `15` | `500` |
+| `DFS` | `Medium` | `130` | `146` | `380` |
+| `DFS` | `Big` | `210` | `390` | `300` |
+| `BFS` | `Tiny` | `8` | `15` | `502` |
+| `BFS` | `Medium` | `68` | `269` | `442` |
+| `BFS` | `Big` | `210` | `620` | `300` |
+| `UCS` | `Medium` | `68` | `269` | `442` |
+| `UCS` | `Medium Dotted` | `1` | `186` | `646` |
+| `UCS` | `Medium Scary` | `68719479864` | `108` | `418` |
+| `UCS` | `Big` | `210` | `620` | `300` |
+| `A*` | `Medium` | `68` | `221` | `442` |
+| `A*` | `Big` | `210` | `549` | `300` |
 
