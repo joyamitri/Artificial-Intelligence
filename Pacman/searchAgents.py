@@ -301,7 +301,7 @@ class CornersProblem(search.SearchProblem):
         #this for loop is for us to check if the strating position of pacman is at one of the corners so that we mark is as visited
         for i in range(len(self.corners)):
             if self.startingPosition == self.corners[i]:
-                visted[i]=True
+                visited[i]=True
 
     def getStartState(self):
         """
@@ -361,7 +361,7 @@ class CornersProblem(search.SearchProblem):
                     #if the position is indeed a corner we find this corner and mark it as visited
                     for i in range(len(self.corners)):
                         if (nextx, nexty) == self.corners[i]:
-                            visted[i]=True
+                            self.visited[i]=True
         self._expanded += 1 # DO NOT CHANGE
         return successors
 
