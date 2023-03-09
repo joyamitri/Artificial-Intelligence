@@ -511,44 +511,23 @@ def foodHeuristic(state: Tuple[Tuple, List[List]], problem: FoodSearchProblem):
     """
     position, foodGrid = state
     "*** YOUR CODE HERE ***"
-
-    #using manhattan dist, we are getting the distance to the closest food  
-    #here we will be adding an estimate of the remaining distance to collect all the remaining food 
-
-    food = problem.getFood(state)
-    remainingFood = food.asList()
-    if not remainingFood:
+      
+    #storing the remaining food 
+    remainingFood = 0
+    for x in range(foodGrid.width):
+        for y in range(foodGrid.height):
+            if foodGrid[x][y]:
+                remainingFood += 1
+    
+    #when there is no remaining food-->return 0 ends code
+    if remainingFood == 0:
         return 0
     
-    #closest food dot + its distance
-    pacmanPos = state.getPacmanPosition()
-    closestFood = None
-    closestDist = float('inf')
-    for f in remainingFood:
-        dist = util.manhattanDistance(pacmanPos, f)
-        if dist < closestDist:
-            closestDist = dist
-            closestFood = f
+    #we get the manhattan distance to the closest food 
+    closestFood = min([util.manhattanDistance(position, f) for f in foodGrid.asList()])
     
-    #MST of the remaining food dots + its total cost
-    mstCost = 0
-    remainingFood.remove(closestFood)
-    visited = set([closestFood])
-    while remainingFood:
-        minDist = float('inf')
-        closest = None
-        for food in remainingFood:
-            for visitedFood in visited:
-                dist = util.manhattanDistance(food, visitedFood)
-                if dist < minDist:
-                    minDist = dist
-                    closest = food
-        mstCost += minDist
-        remainingFood.remove(closest)
-        visited.add(closest)
-    
-    #sum of the closest food dot distance and the MST cost
-    return closestDist + mstCost
+    #we return the estimate of the remaining distance to the remaining food
+    return remainingFood * closestFood
 
 class ClosestDotSearchAgent(SearchAgent):
     "Search for all food using a sequence of searches"
@@ -579,7 +558,9 @@ class ClosestDotSearchAgent(SearchAgent):
         problem = AnyFoodSearchProblem(gameState)
 
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        #by using the AnyFoodSearchProblemwith ucs we are looking for the next closedt/optimal distance food
+        #while still being greedy as at each iteration we compare with nly the current state 
+        return search.ucs(problem)
 
 class AnyFoodSearchProblem(PositionSearchProblem):
     """
@@ -615,7 +596,10 @@ class AnyFoodSearchProblem(PositionSearchProblem):
         x,y = state
 
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        #basically here we are checking if in this case we have food yes or no
+        #so for us to reach the goal state and for it to return true we should find food at this specific position
+        #will return false if there's not food at this position
+        return self.food[x][y]
 
 def mazeDistance(point1: Tuple[int, int], point2: Tuple[int, int], gameState: pacman.GameState) -> int:
     """
