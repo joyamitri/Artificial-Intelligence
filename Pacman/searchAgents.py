@@ -354,16 +354,18 @@ class CornersProblem(search.SearchProblem):
             #making sure that pacman is making a correct move by not hitting a wall
             if not self.walls[nextx][nexty]:
                 #update current position of pacman:
-                new_pos=((nextx, nexty), list(state[1]))
-
+                new_pos = (nextx, nexty)
+                cornersVisited = list(state[1])
                 #now that pacman moved, we are checking if he is in a corner or not
-                if (nextx, nexty) in self.corners:
+                if new_pos in self.corners:
                     #if the position is indeed a corner we find this corner and mark it as visited
-                    for i in range(len(self.corners)):
-                        if (nextx, nexty) == self.corners[i]:
-                            self.visited[i]=True
+                    cornerIndex = self.corners.index(new_pos)
+                    cornersVisited[cornerIndex] = True                           
+
+                successors.append(((new_pos, tuple(cornersVisited)), action, 1))
         self._expanded += 1 # DO NOT CHANGE
-        return successors
+        return successors 
+
 
     def getCostOfActions(self, actions):
         """
