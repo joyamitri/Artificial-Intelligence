@@ -90,7 +90,8 @@ def depthFirstSearch(problem: SearchProblem):
     # Create a stack to store the nodes
     stack = util.Stack()
     # Create a set to store the visited nodes
-    visited = set()
+    # visited = set()
+    visited = []
     # Push the start node to the stack
     stack.push((problem.getStartState(), []))
     # While the stack is not empty
@@ -100,7 +101,8 @@ def depthFirstSearch(problem: SearchProblem):
         # If the node is not visited
         if node not in visited:
             # Add the node to the visited set
-            visited.add(node)
+            # visited.add(node)
+            visited.append(node)
             # If the node is the goal state
             if problem.isGoalState(node):
                 # Return the path
@@ -117,7 +119,8 @@ def breadthFirstSearch(problem: SearchProblem):
     # Create a queue to store the nodes
     queue = util.Queue()
     # Create a set to store the visited nodes
-    visited = set()
+    # visited = set()
+    visited = []
     # Push the start node to the queue
     queue.push((problem.getStartState(), []))
     # While the queue is not empty
@@ -126,8 +129,12 @@ def breadthFirstSearch(problem: SearchProblem):
         node, path = queue.pop()
         # If the node is not visited
         if node not in visited:
+            
             # Add the node to the visited set
-            visited.add(node)
+            # visited.add(node)
+            
+            visited.append(node)
+            # print(visited)
             # If the node is the goal state
             if problem.isGoalState(node):
                 # Return the path
@@ -136,6 +143,7 @@ def breadthFirstSearch(problem: SearchProblem):
             for successor, action, cost in problem.getSuccessors(node):
                 # Push the successor to the queue
                 queue.push((successor, path + [action]))
+
     util.raiseNotDefined()
 
 def uniformCostSearch(problem: SearchProblem):
