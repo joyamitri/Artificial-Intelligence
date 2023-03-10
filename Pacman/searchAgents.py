@@ -416,7 +416,7 @@ def cornersHeuristic(state: Any, problem: CornersProblem):
         distances = [(util.manhattanDistance(corner, otherCorner), j) for j, otherCorner in enumerate(unvisited) if j != i]
         if distances:
             distance, _ = min(distances)
-            mstDistance += distance
+            mast_dist += distance
 
     #we end up returning the sum of the two distances
     return min_dist + mast_dist
