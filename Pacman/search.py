@@ -89,8 +89,7 @@ def depthFirstSearch(problem: SearchProblem):
     "*** YOUR CODE HERE ***"
     # Create a stack to store the nodes
     stack = util.Stack()
-    # Create a set to store the visited nodes
-    # visited = set()
+    # Create a list to store the visited nodes
     visited = []
     # Push the start node to the stack
     stack.push((problem.getStartState(), []))
@@ -100,8 +99,7 @@ def depthFirstSearch(problem: SearchProblem):
         node, path = stack.pop()
         # If the node is not visited
         if node not in visited:
-            # Add the node to the visited set
-            # visited.add(node)
+            # Add the node to the visited list
             visited.append(node)
             # If the node is the goal state
             if problem.isGoalState(node):
@@ -118,8 +116,7 @@ def breadthFirstSearch(problem: SearchProblem):
     "*** YOUR CODE HERE ***"
     # Create a queue to store the nodes
     queue = util.Queue()
-    # Create a set to store the visited nodes
-    # visited = set()
+    # Create a list to store the visited nodes
     visited = []
     # Push the start node to the queue
     queue.push((problem.getStartState(), []))
@@ -130,9 +127,7 @@ def breadthFirstSearch(problem: SearchProblem):
         # If the node is not visited
         if node not in visited:
             
-            # Add the node to the visited set
-            # visited.add(node)
-            
+            # Add the node to the visited list
             visited.append(node)
             # print(visited)
             # If the node is the goal state
@@ -143,7 +138,6 @@ def breadthFirstSearch(problem: SearchProblem):
             for successor, action, cost in problem.getSuccessors(node):
                 # Push the successor to the queue
                 queue.push((successor, path + [action]))
-
     util.raiseNotDefined()
 
 def uniformCostSearch(problem: SearchProblem):
@@ -151,8 +145,8 @@ def uniformCostSearch(problem: SearchProblem):
     "*** YOUR CODE HERE ***"
     # Create a priority queue to store the nodes
     queue = util.PriorityQueue()
-    # Create a set to store the visited nodes
-    visited = set()
+    # Create a list to store the visited nodes
+    visited = []
     # Push the start node to the queue
     queue.push((problem.getStartState(), [], 0), 0)
     # While the queue is not empty
@@ -161,8 +155,8 @@ def uniformCostSearch(problem: SearchProblem):
         node, path, cost = queue.pop()
         # If the node is not visited
         if node not in visited:
-            # Add the node to the visited set
-            visited.add(node)
+            # Add the node to the visited list
+            visited.append(node)
             # If the node is the goal state
             if problem.isGoalState(node):
                 # Return the path
@@ -185,8 +179,8 @@ def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic):
     "*** YOUR CODE HERE ***"
     # Create a priority queue to store the nodes
     queue = util.PriorityQueue()
-    # Create a set to store the visited nodes
-    visited = set()
+    # Create a list to store the visited nodes
+    visited = []
     # Push the start node to the queue
     queue.push((problem.getStartState(), [], 0), 0)
     # While the queue is not empty
@@ -195,8 +189,8 @@ def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic):
         node, path, cost = queue.pop()
         # If the node is not visited
         if node not in visited:
-            # Add the node to the visited set
-            visited.add(node)
+            # Add the node to the visited list
+            visited.append(node)
             # If the node is the goal state
             if problem.isGoalState(node):
                 # Return the path
